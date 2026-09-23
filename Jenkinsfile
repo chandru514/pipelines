@@ -10,15 +10,15 @@ pipeline {
         
         stage('Install Dependencies') {
             steps {
-                // Installs pytest using pip
-                sh 'pip install pytest'
+                // Changed from 'sh' to 'bat' for Windows execution
+                bat 'python -m pip install pytest'
             }
         }
         
         stage('Run Unit Tests') {
             steps {
-                // Runs pytest with the verbose (-v) flag
-                sh 'pytest -v test_app.py'
+                // Changed from 'sh' to 'bat' for Windows execution
+                bat 'python -m pytest -v test_app.py'
             }
         }
     }
